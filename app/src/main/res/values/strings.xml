@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Order Food</string>
+    <string name="TenDangNhap">Tên đăng nhập</string>
+    <string name="gioiTinhNam">Nam</string>
+    <string name="gioiTinhNu">Nữ</string>
+    <string name="NgaySinh">Ngày sinh</string>
+    <string name="MatKhau">Mật khẩu</string>
+    <string name="CMND">CMND</string>
+    <string name="DongY">Đồng ý</string>
+    <string name="Thoat">Thoát</string>
+    <string name="dangKy">Đăng ký</string>
+    <string name="TenNhanVien">Tên nhân viên</string>
+    <string name="DangNhap">Đăng Nhập</string>
+    <string name="TrangChu">Trang chủ</string>
+    <string name="ThucDon">Thực đơn</string>
+    <string name="NhanVien">Nhân viên</string>
+    <string name="ThongKe">Thống kê</string>
+    <string name="CaiDat">Cài đặt</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="themBanAn">Thêm bàn ăn</string>
+    <string name="themBanAnThanhCong">Thêm bàn ăn thành công</string>
+    <string name="themBanAnThatBai">Thêm bàn ăn thất bại</string>
+    <string name="banAnDaTonTai">Bàn ăn đã tồn tại</string>
+    <string name="themThucDon">THÊM THỰC ĐƠN</string>
+    <string name="TenMonAn">Tên món ăn</string>
+    <string name="GiaTien">Giá tiền</string>
+    <string name="themLoaiMonAn">Thêm loại món ăn</string>
+    <string name="tenLoaiMonAn">Tên loại món ăn</string>
+    <string name="yeuCauThemLoaiMonAn">Bạn chưa nhập loại món ăn</string>
+    <string name="monAnDaTonTai">Món ăn đã tồn tại</string>
+    <string name="themLoaiMonAnThanhCong">Bạn vừa thêm món</string>
+</resources>

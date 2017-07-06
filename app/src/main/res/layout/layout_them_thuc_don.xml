@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/size10dp"
+    android:background="@color/colorGreen">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/themThucDon"
+        android:gravity="center"
+        android:textSize="@dimen/size20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/size10dp"
+        android:layout_marginBottom="@dimen/size10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/size5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edtTenMonAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:hint="@string/TenMonAn"
+                android:maxLines="1"
+                android:padding="@dimen/size10dp"
+                android:textColorHint="@color/colorGrey" />
+
+            <EditText
+                android:id="@+id/edtGiaTien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10dp"
+                android:background="@color/colorWhite"
+                android:hint="@string/GiaTien"
+                android:maxLines="1"
+                android:padding="@dimen/size10dp"
+                android:textColorHint="@color/colorGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spLoaiMonAn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"></Spinner>
+
+                <ImageButton
+                    android:id="@+id/btnThemLoaiMonAn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/ic_input_add" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/backgroundheader1"
+            android:layout_marginLeft="@dimen/size5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size5dp">
+        <Button
+            android:id="@+id/btnDongYThucDon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/DongY"
+            android:background="@color/colorOrange"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btnThoatThucDon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Thoat"
+            android:background="@color/colorBlue"
+            android:layout_marginLeft="@dimen/size5dp"
+
+            android:textAllCaps="false"/>
+    </LinearLayout>
+</LinearLayout>

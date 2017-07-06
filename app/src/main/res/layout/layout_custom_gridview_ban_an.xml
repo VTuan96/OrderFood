@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTenBanAn"
+        android:text="Bàn 1"
+        android:textColor="@color/colorGrey"
+        android:layout_centerHorizontal="true"
+
+        />
+    <ImageView
+        android:layout_width="@dimen/size100dp"
+        android:layout_height="@dimen/size100dp"
+        android:src="@drawable/banan"
+        android:id="@+id/imgBanAn"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtTenBanAn"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgBanAn"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/imgGoiMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/goimon"
+
+            android:layout_marginLeft="@dimen/size5dp"/>
+        <ImageView
+            android:id="@+id/imgThanhToan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/thanhtoan"
+            android:layout_toRightOf="@+id/imgGoiMon"
+            android:layout_marginLeft="@dimen/size5dp"/>
+        <ImageView
+            android:id="@+id/imgAnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/anbutton"
+            android:layout_toRightOf="@+id/imgThanhToan"
+            android:layout_marginLeft="@dimen/size5dp"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

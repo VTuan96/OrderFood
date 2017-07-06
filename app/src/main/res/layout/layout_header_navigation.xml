@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="@dimen/size200dp"
+    android:background="@drawable/backgroundheader">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/logodangnhap"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/imgLogoDangNhap"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="Vu Tuan"
+        android:textSize="@dimen/size20sp"
+        android:id="@+id/txtTenDangNhap"
+        android:layout_below="@+id/imgLogoDangNhap"
+        android:layout_alignStart="@+id/imgLogoDangNhap"
+        android:layout_marginLeft="@dimen/size10dp"
+        />
+
+</RelativeLayout>
