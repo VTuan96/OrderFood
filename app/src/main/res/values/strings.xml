@@ -30,4 +30,7 @@
     <string name="yeuCauThemLoaiMonAn">Bạn chưa nhập loại món ăn</string>
     <string name="monAnDaTonTai">Món ăn đã tồn tại</string>
     <string name="themLoaiMonAnThanhCong">Bạn vừa thêm món</string>
+    <string name="yeuCauNhapDuLieu">Vui lòng nhập đủ trưởng dữ liệu</string>
+    <string name="themMonAnThanhCong">Thêm món ăn thành công</string>
+    <string name="themMonAnThatBai">Thêm món ăn thất bại</string>
 </resources>

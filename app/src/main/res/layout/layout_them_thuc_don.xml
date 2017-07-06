@@ -45,7 +45,8 @@
                 android:hint="@string/GiaTien"
                 android:maxLines="1"
                 android:padding="@dimen/size10dp"
-                android:textColorHint="@color/colorGrey" />
+                android:textColorHint="@color/colorGrey"
+                android:inputType="number" />
 
             <LinearLayout
                 android:layout_width="match_parent"

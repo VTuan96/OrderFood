@@ -16,9 +16,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.vutuan.orderfood.Database.DBLoaiMonAn;
+import com.example.vutuan.orderfood.Database.DBMonAn;
 import com.example.vutuan.orderfood.Model.LoaiMonAn;
+import com.example.vutuan.orderfood.Model.MonAn;
 
 import java.util.ArrayList;
 
@@ -37,7 +40,9 @@ public class ThemThucDonActivity extends AppCompatActivity implements View.OnCli
     private ArrayList<LoaiMonAn> mList;
     private ArrayAdapter<String> adapter;
 
-    private String tenLoaiMonAn;
+    private String tenLoaiMonAn, tenMonAn, giaTien;
+    private int maLoaiMonAn;
+    private String hinhAnh;
 
     public static int REQUEST_CODE_THEM_THUC_DON=222;
     public static int REQUEST_CODE_LOAD_IMAGE=333;
@@ -57,6 +62,8 @@ public class ThemThucDonActivity extends AppCompatActivity implements View.OnCli
         btnThemLoaiMonAn.setOnClickListener(this);
         setupAdaper();
         imgMonAn.setOnClickListener(this);
+        btnDongYThucDon.setOnClickListener(this);
+        btnThoatThucDon.setOnClickListener(this);
 
     }
 
@@ -85,6 +92,28 @@ public class ThemThucDonActivity extends AppCompatActivity implements View.OnCli
                 Intent intentChooseImage=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intentChooseImage,REQUEST_CODE_LOAD_IMAGE);
                 break;
+            case R.id.btnDongYThucDon:
+                tenMonAn=edtTenMonAn.getText().toString();
+                giaTien=edtGiaTien.getText().toString();
+                if (tenMonAn==null || tenMonAn.equals("") || giaTien==null || giaTien.equals("")){
+                    Toast.makeText(getBaseContext(),R.string.yeuCauNhapDuLieu,Toast.LENGTH_LONG).show();
+                } else {
+                    int pos=spLoaiMonAn.getSelectedItemPosition();
+                    maLoaiMonAn=mList.get(pos).getMaMonAn();
+                    MonAn monAn=new MonAn(maLoaiMonAn,tenMonAn,giaTien,hinhAnh);
+                    DBMonAn dbMonAn=new DBMonAn(getBaseContext());
+                    long check=dbMonAn.themMonAn(monAn);
+                    if (check!=0){
+                        Toast.makeText(getBaseContext(),R.string.themMonAnThanhCong,Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getBaseContext(),R.string.themMonAnThatBai,Toast.LENGTH_LONG).show();
+                    }
+                    finish();
+                }
+                break;
+            case R.id.btnThoatThucDon:
+                finish();
+                break;
         }
     }
 
@@ -94,16 +123,11 @@ public class ThemThucDonActivity extends AppCompatActivity implements View.OnCli
         if (requestCode==REQUEST_CODE_THEM_THUC_DON && resultCode==RESULT_OK){
             tenLoaiMonAn=data.getStringExtra(ThemLoaiMonAnActivity.LOAIMONAN);
             setupAdaper();
-        } else if (requestCode==REQUEST_CODE_LOAD_IMAGE && resultCode==RESULT_OK){
-            Uri selectedImage = data.getData();
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };
-            Cursor cursor = getContentResolver().query(selectedImage,filePathColumn, null, null, null);
-            cursor.moveToFirst();
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            Log.d("TAG",picturePath);
-            cursor.close();
-            imgMonAn.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+        } else if (requestCode==REQUEST_CODE_LOAD_IMAGE && resultCode==RESULT_OK && data!=null){
+            Uri uri=data.getData();
+            hinhAnh=uri.toString();
+            imgMonAn.setImageURI(uri);
         }
+
     }
 }

@@ -38,6 +38,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
     public static final String TB_MONAN_TENMONAN="TENMONAN";
     public static final String TB_MONAN_MALOAIMONAN="MALOAIMONAN";
     public static final String TB_MONAN_GIATIEN="GIATIEN";
+    public static final String TB_MONAN_HINHANH="HINHANH";
 
     public static final String TB_LOAIMONAN_MALOAIMONAN="MALOAIMONAN";
     public static final String TB_LOAIMONAN_TENLOAIMONAN="TENLOAIMONAN";
@@ -65,7 +66,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
         String db_BanAn="CREATE TABLE "+TB_BANAN+ " ( "+TB_BANAN_MABANAN+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+TB_BANAN_TENBANAN+ " TEXT, "+
                 TB_BANAN_TRANGTHAI+ " TEXT )";
         String db_MonAn="CREATE TABLE "+TB_MONAN+ " ( "+TB_MONAN_MAMONAN+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+TB_MONAN_TENMONAN+" TEXT, "+
-                TB_MONAN_MALOAIMONAN+ " INTGER, "+TB_MONAN_GIATIEN+ " TEXT )";
+                TB_MONAN_MALOAIMONAN+ " INTGER, "+TB_MONAN_HINHANH+ " TEXT, "+TB_MONAN_GIATIEN+ " TEXT )";
         String db_LoaiMonAn="CREATE TABLE "+TB_LOAIMONAN+ " ( "+TB_LOAIMONAN_MALOAIMONAN+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+TB_LOAIMONAN_TENLOAIMONAN+ " TEXT )";
         String db_GoiMonAn="CREATE TABLE "+TB_GOIMONAN+ " ( "+TB_GOIMONAN_MAGOIMONAN+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+TB_GOIMONAN_MABANAN+" INTEGER, "+
                 TB_GOIMONAN_NGAYGOI+ " TEXT, "+TB_GOIMONAN_TRANGTHAI+ "BOOLEAN )";
