@@ -1,16 +1,12 @@
 package com.example.vutuan.orderfood.Adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.vutuan.orderfood.Database.DBLoaiMonAn;
@@ -53,7 +49,7 @@ public class AdapterThucDon extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView==null){
-            convertView= LayoutInflater.from(context).inflate(R.layout.layout_custom_gridview_thucdon,parent,false);
+            convertView= LayoutInflater.from(context).inflate(R.layout.layout_custom_listview_thucdon,parent,false);
         }
         ViewHolderThucDon holderThucDon=new ViewHolderThucDon(convertView);
         LoaiMonAn loaiMonAn=listLoaiMonAn.get(position);

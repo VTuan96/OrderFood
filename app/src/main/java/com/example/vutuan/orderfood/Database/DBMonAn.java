@@ -49,4 +49,22 @@ public class DBMonAn {
         }
         return listMonAn;
     }
+
+    //get list MonAn theo ma loai mon an
+    public List<MonAn> getListMonAn(int maLoaiMonAn){
+        List<MonAn> listMonAn=new ArrayList<>();
+        String query="SELECT * FROM "+CreateDatabase.TB_MONAN + " WHERE "+CreateDatabase.TB_MONAN_MALOAIMONAN+ " = '"+maLoaiMonAn+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                int maMonAn=cursor.getInt(0);
+                String tenMonAn=cursor.getString(1);
+                String hinhAnh=cursor.getString(3);
+                String giaTien=cursor.getString(4);
+                MonAn monAn=new MonAn(maMonAn,maLoaiMonAn,tenMonAn,giaTien,hinhAnh);
+                listMonAn.add(monAn);
+            }
+        }
+        return listMonAn;
+    }
 }

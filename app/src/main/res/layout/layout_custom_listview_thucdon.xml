@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/size5dp">
+        android:focusable="false"
+        android:focusableInTouchMode="false" >
         <ImageView
             android:id="@+id/imgLoaiMonAn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:background="@drawable/backgroundheader1"
-            android:scaleType="centerCrop"/>
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
     </FrameLayout>
     <TextView
         android:layout_width="match_parent"
@@ -23,6 +27,8 @@
         android:padding="@dimen/size10dp"
         android:textSize="@dimen/size30sp"
         android:background="@color/colorGreyTransperent"
-        android:id="@+id/txtTenLoaiMonAn"/>
+        android:id="@+id/txtTenLoaiMonAn"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
 </FrameLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/size5dp">
+        <ImageView
+            android:id="@+id/imgAnhMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:background="@color/colorGreyTransperent">
+            <TextView
+                android:id="@+id/txtTenMonAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size5dp"
+                android:text="Gà luộc"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/size20sp"/>
+            <TextView
+                android:id="@+id/txtGiaMonAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size5dp"
+                android:text="100k"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:textSize="@dimen/size20sp"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</FrameLayout>

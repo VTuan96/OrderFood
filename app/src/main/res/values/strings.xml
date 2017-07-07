@@ -33,4 +33,6 @@
     <string name="yeuCauNhapDuLieu">Vui lòng nhập đủ trưởng dữ liệu</string>
     <string name="themMonAnThanhCong">Thêm món ăn thành công</string>
     <string name="themMonAnThatBai">Thêm món ăn thất bại</string>
+    <string name="tenMonAn">Ten mon an:</string>
+    <string name="giaMonAn">Gia mon an:</string>
 </resources>
