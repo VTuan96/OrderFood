@@ -34,7 +34,8 @@
                 android:hint="@string/TenMonAn"
                 android:maxLines="1"
                 android:padding="@dimen/size10dp"
-                android:textColorHint="@color/colorGrey" />
+                android:textColorHint="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
             <EditText
                 android:id="@+id/edtGiaTien"
@@ -46,7 +47,8 @@
                 android:maxLines="1"
                 android:padding="@dimen/size10dp"
                 android:textColorHint="@color/colorGrey"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorGrey"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

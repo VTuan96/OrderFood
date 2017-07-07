@@ -1,5 +1,6 @@
 package com.example.vutuan.orderfood;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
@@ -108,6 +109,8 @@ public class ThemThucDonActivity extends AppCompatActivity implements View.OnCli
                     } else {
                         Toast.makeText(getBaseContext(),R.string.themMonAnThatBai,Toast.LENGTH_LONG).show();
                     }
+                    Intent intentCallBack=new Intent();
+                    setResult(Activity.RESULT_OK,intentCallBack);
                     finish();
                 }
                 break;

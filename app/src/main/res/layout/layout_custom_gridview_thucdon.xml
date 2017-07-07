@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/size5dp">
+        <ImageView
+            android:id="@+id/imgLoaiMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/backgroundheader1"
+            android:scaleType="centerCrop"/>
+    </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xào"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/size10dp"
+        android:textSize="@dimen/size30sp"
+        android:background="@color/colorGreyTransperent"
+        android:id="@+id/txtTenLoaiMonAn"/>
+
+</FrameLayout>

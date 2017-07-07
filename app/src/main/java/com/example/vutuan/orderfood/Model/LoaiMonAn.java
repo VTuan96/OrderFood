@@ -7,6 +7,15 @@ package com.example.vutuan.orderfood.Model;
 public class LoaiMonAn {
     private int MaMonAn;
     private String TenMonAn;
+    private String HinhAnh;
+
+    public String getHinhAnh() {
+        return HinhAnh;
+    }
+
+    public void setHinhAnh(String hinhAnh) {
+        HinhAnh = hinhAnh;
+    }
 
     public LoaiMonAn(int maMonAn, String tenMonAn) {
         MaMonAn = maMonAn;

@@ -17,10 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".DangKyActivity" />
+
         <activity android:name=".TrangChuActivity" />
+
         <activity
             android:name=".ThemBanAnActivity"
-            android:theme="@style/PopUpActivity" />
+            android:theme="@style/PopUpActivity"
+            android:label="@string/themBanAn"/>
+
         <activity android:name=".ThemLoaiMonAnActivity"
             android:theme="@style/PopUpActivity"
             android:label="@string/themLoaiMonAn"></activity>

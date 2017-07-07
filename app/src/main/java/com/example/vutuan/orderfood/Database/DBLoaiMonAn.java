@@ -53,4 +53,17 @@ public class DBLoaiMonAn {
         }
         return mList;
     }
+
+    //lay danh sach cac loai mon an co hinh anh
+    public String getImageLoaiMonAn(int maLoaiMonAn){
+        String hinhAnh="";
+        String query="SELECT * FROM "+CreateDatabase.TB_MONAN+ " WHERE "+CreateDatabase.TB_MONAN_MALOAIMONAN+ " = '"+maLoaiMonAn + "'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                hinhAnh=cursor.getString(3);
+            }
+        }
+        return hinhAnh;
+    }
 }
