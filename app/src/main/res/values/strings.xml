@@ -33,6 +33,21 @@
     <string name="yeuCauNhapDuLieu">Vui lòng nhập đủ trưởng dữ liệu</string>
     <string name="themMonAnThanhCong">Thêm món ăn thành công</string>
     <string name="themMonAnThatBai">Thêm món ăn thất bại</string>
-    <string name="tenMonAn">Ten mon an:</string>
-    <string name="giaMonAn">Gia mon an:</string>
+    <string name="tenMonAn">Tên món ăn:</string>
+    <string name="giaMonAn">Giá món ăn:</string>
+    <string name="nhapSoLuong">Nhập số lượng</string>
+    <string name="themSoLuong">Số lượng</string>
+    <string name="themSoLuongThanhCong">Thêm thành công</string>
+    <string name="themThanhCong">Thêm thành công</string>
+    <string name="themThatBai">Thêm thất bại</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="banAn_nhanVien">bàn 1 - vu tuan</string>
+    <string name="ten_mon_an">TÊN MÓN ĂN</string>
+    <string name="gia_mon_an">GIÁ MÓN ĂN</string>
+    <string name="so_luong">SỐ LƯỢNG</string>
+    <string name="tong_cong">TỔNG CỘNG</string>
+    <string name="thanh_toan">Thanh toán</string>
+    <string name="daThanhToan">Thanh toán thành công</string>
 </resources>

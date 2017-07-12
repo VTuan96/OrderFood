@@ -13,4 +13,5 @@
     <dimen name="size50dp">50dp</dimen>
     <dimen name="size300dp">300dp</dimen>
     <dimen name="size3dp">3dp</dimen>
+    <dimen name="size18sp">18sp</dimen>
 </resources>

@@ -41,4 +41,32 @@ public class DBNhanVien {
         return index;
     }
 
+    //lay ma nhan vien theo ten dang nhap
+    public int getMaNV(String tenDangNhap){
+        int result=0;
+        String query="SELECT * FROM "+CreateDatabase.TB_NHANVIEN + " WHERE "+CreateDatabase.TB_NHANVIEN_TENDANGNHAP+ " = '"+tenDangNhap+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                result=cursor.getInt(cursor.getColumnIndex(CreateDatabase.TB_NHANVIEN_MANV));
+            }
+            cursor.close();
+        }
+        return result;
+    }
+
+    //lay ten nhan vien theo ten dang nhap
+    public String getTenNV(String tenDangNhap){
+        String result="";
+        String query="SELECT * FROM "+CreateDatabase.TB_NHANVIEN + " WHERE "+CreateDatabase.TB_NHANVIEN_TENDANGNHAP+ " = '"+tenDangNhap+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                result=cursor.getString(cursor.getColumnIndex(CreateDatabase.TB_NHANVIEN_TENNV));
+            }
+            cursor.close();
+        }
+        return result;
+    }
+
 }

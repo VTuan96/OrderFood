@@ -15,13 +15,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.vutuan.orderfood.Fragment.ThongKeFragment;
 import com.example.vutuan.orderfood.Fragment.HienThiBanAnFragment;
 import com.example.vutuan.orderfood.Fragment.ThucDonFragment;
 
 /**
  * Created by vutuan on 04/07/2017.
+ * Ứng dụng này còn 1 số hạn chế:
+ * 1. Khi có người dùng chọn bàn ăn rồi thì một người dùng khác đăng nhập vẫn có thể gọi món cho bàn ăn đã có người ngồi
+ * 2. Bảng bàn ăn cần thêm mã nhân viên khi có người ngồi và đã gọi món
+ *
+ *
  */
+
 
 public class TrangChuActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -61,6 +66,11 @@ public class TrangChuActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        Bundle values=getIntent().getBundleExtra(DangNhapActivity.VALUE_DANGNHAP);
+        String tenNhanVien=values.getString(DangNhapActivity.TENNHANVIEN);
+        final int maNV=values.getInt(DangNhapActivity.MANV);
+        txtTenDangNhap.setText(tenNhanVien);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -74,36 +84,29 @@ public class TrangChuActivity extends AppCompatActivity {
                         transactionTrangChu.replace(R.id.content,hienThiBanAnFragment);
                         transactionTrangChu.commit();
                         break;
-                    case R.id.mnu_thongKe:
-                        FragmentTransaction transactionThongKe=fragmentManager.beginTransaction();
-                        ThongKeFragment thongKeFragment=new ThongKeFragment();
-                        transactionThongKe.replace(R.id.content,thongKeFragment);
-                        transactionThongKe.commit();
-                        break;
+
                     case R.id.mnu_thucDon:
                         FragmentTransaction transactionThucDon=fragmentManager.beginTransaction();
                         ThucDonFragment thucDonFragment=new ThucDonFragment();
+                        Bundle args=new Bundle();
+                        args.putInt(DangNhapActivity.MANV,maNV);
+                        thucDonFragment.setArguments(args);
                         transactionThucDon.replace(R.id.content,thucDonFragment);
                         transactionThucDon.commit();
-                        break;
-                    case R.id.mnu_caiDat:
-                        FragmentTransaction transactionCaiDat=fragmentManager.beginTransaction();
-                        ThongKeFragment caiDatFragment=new ThongKeFragment();
-                        transactionCaiDat.replace(R.id.content,caiDatFragment);
-                        transactionCaiDat.commit();
                         break;
                 }
                 return true;
             }
         });
 
-        Bundle values=getIntent().getBundleExtra(DangNhapActivity.VALUE_DANGNHAP);
-        String tenDangNhap=values.getString(DangNhapActivity.TENDANGNHAP);
-        txtTenDangNhap.setText(tenDangNhap);
+
 
         fragmentManager=getSupportFragmentManager();
         FragmentTransaction transactionTrangChu=fragmentManager.beginTransaction();
         HienThiBanAnFragment hienThiBanAnFragment=new HienThiBanAnFragment();
+        Bundle args=new Bundle();
+        args.putInt(DangNhapActivity.MANV,maNV);
+        hienThiBanAnFragment.setArguments(args);
         transactionTrangChu.replace(R.id.content,hienThiBanAnFragment);
         transactionTrangChu.commit();
 

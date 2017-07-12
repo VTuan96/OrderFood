@@ -15,6 +15,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.vutuan.orderfood.Adapter.AdapterBanAn;
+import com.example.vutuan.orderfood.DangNhapActivity;
 import com.example.vutuan.orderfood.Model.BanAn;
 import com.example.vutuan.orderfood.ThemBanAnActivity;
 import com.example.vutuan.orderfood.Database.DBBanAn;
@@ -28,6 +29,8 @@ import java.util.ArrayList;
 
 public class HienThiBanAnFragment extends Fragment {
     private static final int REQUESTCODE =111;
+    public static final String TRANG_THAI_GOI_MON ="TRANG_THAI_GOI_MON" ;
+    public static final String MAGOIMONAN = "MAGOIMONAN" ;
     private GridView gvBanAn;
     private ArrayList<BanAn> mListBanAn;
     private AdapterBanAn adapterBanAn;
@@ -55,7 +58,14 @@ public class HienThiBanAnFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_trangchu,menu);
+        Bundle args=getArguments();
+        if (args!=null){
+            int maNV=args.getInt(DangNhapActivity.MANV);
+            if (maNV==1){
+                inflater.inflate(R.menu.menu_trangchu,menu);
+            }
+        }
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 

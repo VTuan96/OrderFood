@@ -11,17 +11,19 @@ import android.widget.Toast;
 
 import com.example.vutuan.orderfood.Database.CreateDatabase;
 import com.example.vutuan.orderfood.Database.DBNhanVien;
+import com.example.vutuan.orderfood.Model.NhanVien;
 
 /**
  * Created by vutuan on 26/06/2017.
  */
 public class DangNhapActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String MANV = "MANV";
     private EditText edtTenDangNhap, edtMatKhauDangNhap;
     private Button btnDangNhap, btnDangKy;
 
     private String tenDangNhap, matKhauDangNhap;
     public static final String VALUE_DANGNHAP="VALUE_DANGNHAP";
-    public static final String TENDANGNHAP="TENDANGNHAP";
+    public static final String TENNHANVIEN="TENNHANVIEN";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +52,16 @@ public class DangNhapActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.btnDangNhap:
                 if (check){
+                    int maNhanVien=dbNhanVien.getMaNV(tenDangNhap);
+                    String tenNhanVien=dbNhanVien.getTenNV(tenDangNhap);
+
                     btnDangKy.setVisibility(View.VISIBLE);
                     Toast.makeText(getBaseContext(),"Login successfully!",Toast.LENGTH_LONG).show();
 
                     Intent intent=new Intent(getBaseContext(),TrangChuActivity.class);
                     Bundle values=new Bundle();
-                    values.putString(TENDANGNHAP,tenDangNhap);
+                    values.putString(TENNHANVIEN,tenNhanVien);
+                    values.putInt(MANV,maNhanVien);
                     intent.putExtra(VALUE_DANGNHAP,values);
                     startActivity(intent);
                     finish();

@@ -23,10 +23,13 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.vutuan.orderfood.Adapter.AdapterThucDon;
+import com.example.vutuan.orderfood.DangNhapActivity;
 import com.example.vutuan.orderfood.Database.DBLoaiMonAn;
+import com.example.vutuan.orderfood.Database.DBNhanVien;
 import com.example.vutuan.orderfood.Model.LoaiMonAn;
 import com.example.vutuan.orderfood.R;
 import com.example.vutuan.orderfood.ThemThucDonActivity;
+import com.example.vutuan.orderfood.TrangChuActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,7 @@ public class ThucDonFragment extends Fragment implements AdapterView.OnItemClick
 
     public static final String DANH_SACH_MON_AN="DANH_SACH_MON_AN";
     public static final String MA_LOAI_MON_AN="MA_LOAI_MON_AN";
+    public static final String MA_BAN="MA_BAN";
 
     @Nullable
     @Override
@@ -67,7 +71,14 @@ public class ThucDonFragment extends Fragment implements AdapterView.OnItemClick
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_thucdon,menu);
+        Bundle bundle=getArguments();
+        if (bundle!=null){
+            int maNV=bundle.getInt(DangNhapActivity.MANV);
+            Log.d("thuc don",maNV+"");
+            if (maNV==1){
+                inflater.inflate(R.menu.menu_thucdon,menu);
+            }
+        }
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -99,9 +110,20 @@ public class ThucDonFragment extends Fragment implements AdapterView.OnItemClick
         int maLoaiMonAn=loaiMonAn.getMaMonAn();
         Bundle bundle=new Bundle();
         bundle.putInt(MA_LOAI_MON_AN,maLoaiMonAn);
+
+        Bundle args=this.getArguments();
+        if (args!=null){ //nguoi dung bam goi mon
+            int maBanAn=args.getInt(ThucDonFragment.MA_BAN);
+            int maNV=args.getInt(DangNhapActivity.MANV);
+            int maGoiMon=args.getInt(HienThiBanAnFragment.MAGOIMONAN);
+            bundle.putInt(MA_BAN,maBanAn);
+            bundle.putInt(DangNhapActivity.MANV,maNV);
+            bundle.putInt(HienThiBanAnFragment.MAGOIMONAN,maGoiMon);
+            Log.d("GOI MON","Nguoi dung goi mon");
+        }
+
         danhSachMonAnFragment.setArguments(bundle);
-        transaction.addToBackStack(DANH_SACH_MON_AN);
-        transaction.add(R.id.content,danhSachMonAnFragment,DANH_SACH_MON_AN);
+        transaction.replace(R.id.content,danhSachMonAnFragment,DANH_SACH_MON_AN).addToBackStack(DANH_SACH_MON_AN);
         transaction.commit();
 
     }

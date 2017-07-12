@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.vutuan.orderfood.Model.BanAn;
 
@@ -23,7 +24,7 @@ public class DBBanAn {
     public long themBanAn(String tenBanAn){
         ContentValues values=new ContentValues();
         values.put(CreateDatabase.TB_BANAN_TENBANAN,tenBanAn);
-        values.put(CreateDatabase.TB_BANAN_TRANGTHAI,"false");
+        values.put(CreateDatabase.TB_BANAN_TRANGTHAI,"false");//mac dinh la chua goi mon
 
         return database.insert(CreateDatabase.TB_BANAN,null,values);
     }
@@ -58,5 +59,26 @@ public class DBBanAn {
         return mList;
     }
 
+    //lay trang thai cua ban an
+    public String getTrangThaiBanAn(int maBanAn){
+        String result="false";
+        String query="SELECT * FROM "+CreateDatabase.TB_BANAN+ " WHERE "+CreateDatabase.TB_BANAN_MABANAN+ " = '"+
+                maBanAn+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                result=cursor.getString(2);
+            }
+        }
+
+        return result;
+    }
+
+    public void updateTrangThaiBanAn(int maBanAn, String trangThai){
+        ContentValues values=new ContentValues();
+        values.put(CreateDatabase.TB_BANAN_TRANGTHAI,trangThai);
+        database.update(CreateDatabase.TB_BANAN,values,CreateDatabase.TB_BANAN_MABANAN+" = '"+maBanAn+"'",null);
+
+    }
 
 }

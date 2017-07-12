@@ -46,6 +46,7 @@ public class DBMonAn {
                 MonAn monAn=new MonAn(maMonAn,maLoaiMonAn,tenMonAn,giaTien,hinhAnh);
                 listMonAn.add(monAn);
             }
+            cursor.close();
         }
         return listMonAn;
     }
@@ -64,7 +65,35 @@ public class DBMonAn {
                 MonAn monAn=new MonAn(maMonAn,maLoaiMonAn,tenMonAn,giaTien,hinhAnh);
                 listMonAn.add(monAn);
             }
+            cursor.close();
         }
         return listMonAn;
     }
+
+    public String getTenMonAn(int maMonAn){
+        String result="";
+        String query="SELECT * FROM "+CreateDatabase.TB_MONAN + " WHERE "+CreateDatabase.TB_MONAN_MALOAIMONAN+ " = '"+maMonAn+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                result=cursor.getString(1);
+            }
+            cursor.close();
+        }
+        return result;
+    }
+
+    public int getGiaTienMonAn(int maMonAn){
+        int result=0;
+        String query="SELECT * FROM "+CreateDatabase.TB_MONAN + " WHERE "+CreateDatabase.TB_MONAN_MALOAIMONAN+ " = '"+maMonAn+"'";
+        Cursor cursor=database.rawQuery(query,null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                result=cursor.getInt(cursor.getColumnIndex(CreateDatabase.TB_MONAN_GIATIEN));
+            }
+            cursor.close();
+        }
+        return result;
+    }
+
 }

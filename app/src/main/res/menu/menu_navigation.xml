@@ -15,13 +15,6 @@
             android:title="@string/NhanVien"
             android:id="@+id/mnu_nhanVien"
             android:icon="@drawable/nhanvien"/>
-        <item
-            android:title="@string/ThongKe"
-            android:id="@+id/mnu_thongKe"
-            android:icon="@drawable/thongke"/>
-        <item
-            android:title="@string/CaiDat"
-            android:id="@+id/mnu_caiDat"
-            android:icon="@drawable/caidat"/>
+
     </group>
 </menu>

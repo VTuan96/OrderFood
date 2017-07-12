@@ -17,20 +17,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".DangKyActivity" />
-
         <activity android:name=".TrangChuActivity" />
-
         <activity
             android:name=".ThemBanAnActivity"
-            android:theme="@style/PopUpActivity"
-            android:label="@string/themBanAn"/>
-
-        <activity android:name=".ThemLoaiMonAnActivity"
-            android:theme="@style/PopUpActivity"
-            android:label="@string/themLoaiMonAn"></activity>
-
-        <activity android:name=".ThemThucDonActivity">
-        </activity>
+            android:label="@string/themBanAn"
+            android:theme="@style/PopUpActivity" />
+        <activity
+            android:name=".ThemLoaiMonAnActivity"
+            android:label="@string/themLoaiMonAn"
+            android:theme="@style/PopUpActivity" />
+        <activity android:name=".ThemThucDonActivity"
+            android:label="@string/themThucDon"></activity>
+        <activity android:name=".ThemSoLuongActivity"
+            android:label="@string/themSoLuong"
+            android:theme="@style/PopUpActivity"></activity>
     </application>
 
 </manifest>

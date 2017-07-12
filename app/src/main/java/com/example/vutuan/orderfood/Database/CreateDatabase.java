@@ -32,7 +32,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
 
     public static final String TB_BANAN_MABANAN="MABANAN";
     public static final String TB_BANAN_TENBANAN="TENBANAN";
-    public static final String TB_BANAN_TRANGTHAI="TRANGTHAI";
+    public static final String TB_BANAN_TRANGTHAI="TRANGTHAI"; //true: da goi mon, false: chua goi mon
 
     public static final String TB_MONAN_MAMONAN="MAMONAN";
     public static final String TB_MONAN_TENMONAN="TENMONAN";
@@ -44,9 +44,10 @@ public class CreateDatabase extends SQLiteOpenHelper {
     public static final String TB_LOAIMONAN_TENLOAIMONAN="TENLOAIMONAN";
 
     public static final String TB_GOIMONAN_MAGOIMONAN="MAGOIMONAN";
+    public static final String TB_GOIMONAN_MANV="MANV";
     public static final String TB_GOIMONAN_MABANAN="MABANAN";
     public static final String TB_GOIMONAN_NGAYGOI="NGAYGOI";
-    public static final String TB_GOIMONAN_TRANGTHAI="TRANGTHAI";
+    public static final String TB_GOIMONAN_TRANGTHAI="TRANGTHAI"; //true: da thanh toan, false: chua thanh toan
 
     public static final String TB_CHITIETGOIMON_MAGOIMON="MAGOIMON";
     public static final String TB_CHITIETGOIMON_MAMONAN="MAMONAN";
@@ -69,9 +70,10 @@ public class CreateDatabase extends SQLiteOpenHelper {
                 TB_MONAN_MALOAIMONAN+ " INTGER, "+TB_MONAN_HINHANH+ " TEXT, "+TB_MONAN_GIATIEN+ " TEXT )";
         String db_LoaiMonAn="CREATE TABLE "+TB_LOAIMONAN+ " ( "+TB_LOAIMONAN_MALOAIMONAN+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+TB_LOAIMONAN_TENLOAIMONAN+ " TEXT )";
         String db_GoiMonAn="CREATE TABLE "+TB_GOIMONAN+ " ( "+TB_GOIMONAN_MAGOIMONAN+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+TB_GOIMONAN_MABANAN+" INTEGER, "+
-                TB_GOIMONAN_NGAYGOI+ " TEXT, "+TB_GOIMONAN_TRANGTHAI+ "BOOLEAN )";
-        String db_ChiTietGoiMon="CREATE TABLE "+TB_CHITIETGOIMON+ " ( "+TB_CHITIETGOIMON_MAGOIMON+ "INTEGER, "+TB_CHITIETGOIMON_MAMONAN+ " INTEGER, "+
-                TB_CHITIETGOIMON_SOLUONG+ " INTEGER )";
+                TB_GOIMONAN_MANV+ " INTEGER, "+TB_GOIMONAN_NGAYGOI+ " TEXT, "+TB_GOIMONAN_TRANGTHAI+ " TEXT )";
+
+        String db_ChiTietGoiMon="CREATE TABLE "+TB_CHITIETGOIMON+ " ( "+TB_CHITIETGOIMON_MAGOIMON+ " INTEGER, "+TB_CHITIETGOIMON_MAMONAN+ " INTEGER, "+
+                TB_CHITIETGOIMON_SOLUONG+ " INTEGER, PRIMARY KEY ( " +TB_CHITIETGOIMON_MAGOIMON+ " , "+TB_CHITIETGOIMON_MAMONAN+" )"+ " )";
 
         db.execSQL(db_NhanVien);
         db.execSQL(db_BanAn);

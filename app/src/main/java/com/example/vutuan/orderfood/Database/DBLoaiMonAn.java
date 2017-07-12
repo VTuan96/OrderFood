@@ -50,6 +50,7 @@ public class DBLoaiMonAn {
                 LoaiMonAn loaiMonAn=new LoaiMonAn(maLoaiMonAn,tenLoaiMonAn);
                 mList.add(loaiMonAn);
             }
+            cursor.close();
         }
         return mList;
     }
@@ -63,6 +64,7 @@ public class DBLoaiMonAn {
             while (cursor.moveToNext()){
                 hinhAnh=cursor.getString(3);
             }
+            cursor.close();
         }
         return hinhAnh;
     }

@@ -13,6 +13,10 @@ public class NhanVien {
     String NgaySinh;
     int CMND;
 
+    public NhanVien(){
+
+    }
+
     public NhanVien(String tenNV, String tenDangNhap, String matKhau, boolean gioiTinh, String ngaySinh, int CMND) {
         TenNV = tenNV;
         TenDangNhap = tenDangNhap;
